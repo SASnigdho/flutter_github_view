@@ -27,8 +27,8 @@ class HomePage extends GetView<HomeController> {
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Products'),
-            BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Cart'),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Online'),
+            BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Saved'),
           ],
           currentIndex: controller.index.value,
           onTap: _onItemTapped,
