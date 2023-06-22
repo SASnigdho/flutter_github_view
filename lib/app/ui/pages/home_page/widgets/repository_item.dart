@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_github_view/app/data/models/repository/github_repository.dart';
 import 'package:get/get.dart';
 
+import '../../../utils/date_time_helper.dart';
+
 class RepositoryItem extends StatelessWidget {
   const RepositoryItem(this.repository, {super.key, required this.onTap});
 
@@ -25,7 +27,6 @@ class RepositoryItem extends StatelessWidget {
                 style: Get.textTheme.titleMedium,
                 overflow: TextOverflow.ellipsis,
               ),
-              
               Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -35,9 +36,8 @@ class RepositoryItem extends StatelessWidget {
                     style: Get.textTheme.labelSmall,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  
                   Text(
-                    '${repository.createdAt}',
+                    DateTimeHelper.formateDate(repository.createdAt!),
                     style: Get.textTheme.labelSmall,
                     overflow: TextOverflow.ellipsis,
                   ),

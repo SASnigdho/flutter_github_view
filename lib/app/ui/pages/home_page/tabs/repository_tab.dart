@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import '../../../../controllers/repository_controller.dart';
 import '../widgets/repository_item.dart';
+import '../widgets/repository_show.dart';
 
 class RepositoryTab extends GetView<RepositoryController> {
   const RepositoryTab({super.key});
@@ -51,8 +52,10 @@ class RepositoryTab extends GetView<RepositoryController> {
 
                         return RepositoryItem(
                           repository,
-                          onTap: () {
-                            // TODO:: Opne details page.
+                          onTap: () async {
+                            await Get.to(() => RepositoryShow(repository));
+
+                            // TODO:: Saved item.
                           },
                         );
                       },
