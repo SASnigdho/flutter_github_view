@@ -55,7 +55,7 @@ class RepositoryTab extends GetView<RepositoryController> {
                           onTap: () async {
                             await Get.to(() => RepositoryShow(repository));
 
-                            // TODO:: Saved item.
+                            await controller.saveRepository(repository);
                           },
                         );
                       },
