@@ -51,12 +51,15 @@ class RepositoryTab extends GetView<RepositoryController> {
 
                         return RepositoryItem(
                           repository,
-                          onTap: () {},
+                          onTap: () {
+                            // TODO:: Opne details page.
+                          },
                         );
                       },
                       separatorBuilder: (context, index) => const SizedBox(),
                       itemCount: controller.repositories.length,
                       shrinkWrap: true,
+                      padding: const EdgeInsets.symmetric(vertical: 16),
                     ),
                   ),
                 ],
