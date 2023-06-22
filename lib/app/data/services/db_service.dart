@@ -71,6 +71,7 @@ class DbService implements IDbService {
 
       for (final element in repositories) {
         await element.ownerLink.load();
+        element.owner = element.ownerLink.value;
       }
 
       return repositories;

@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import '../controllers/home_controller.dart';
+import '../controllers/local_repository_controller.dart';
 import '../controllers/repository_controller.dart';
 import '../data/helpers/api_client.dart';
 import '../data/provider/local_repository.dart';
@@ -16,6 +17,10 @@ class HomeBinding implements Bindings {
 
     Get.lazyPut<RepositoryController>(
       () => RepositoryController(SearchRepository(), LocalRepository()),
+    );
+
+    Get.lazyPut<LocalRepositoryController>(
+      () => LocalRepositoryController(LocalRepository()),
     );
   }
 }

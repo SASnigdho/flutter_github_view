@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../controllers/repository_controller.dart';
+import '../../../../controllers/local_repository_controller.dart';
 import '../widgets/repository_item.dart';
 
-class SavedRepositoryTab extends GetView<RepositoryController> {
+class SavedRepositoryTab extends GetView<LocalRepositoryController> {
   const SavedRepositoryTab({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => controller.isSearching.value
+      () => controller.isLoading.value
           ? const Center(child: CircularProgressIndicator())
           : ListView.separated(
               itemBuilder: (context, index) {

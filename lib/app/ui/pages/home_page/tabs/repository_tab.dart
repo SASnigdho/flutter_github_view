@@ -53,9 +53,8 @@ class RepositoryTab extends GetView<RepositoryController> {
                         return RepositoryItem(
                           repository,
                           onTap: () async {
-                            await Get.to(() => RepositoryShow(repository));
-
                             await controller.saveRepository(repository);
+                            await Get.to(() => RepositoryShow(repository));
                           },
                         );
                       },

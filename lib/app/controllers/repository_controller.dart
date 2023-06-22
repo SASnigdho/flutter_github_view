@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:flutter_github_view/app/controllers/local_repository_controller.dart';
 import 'package:flutter_github_view/app/data/models/repository/github_repository.dart';
 import 'package:get/get.dart';
 
@@ -36,8 +37,13 @@ class RepositoryController extends MainController {
   Future<void> saveRepository(GithubRepository repository) async {
     try {
       await localRepository.save(repository);
+
+      //
+
+      final localCtrl = Get.find<LocalRepositoryController>();
+      await localCtrl.onReady();
     } catch (e) {
-      log('Error => RepositoryController:: save@ $e');
+      log('Error => RepositoryController:: saveRepository@ $e');
     }
   }
 }
