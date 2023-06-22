@@ -4,7 +4,6 @@ import 'package:flutter_github_view/app/data/models/repository/github_repository
 import 'package:get/get.dart';
 
 import '../data/provider/interfaces/i_local_repository.dart';
-import '../data/provider/interfaces/i_search_repository.dart';
 import 'main_controller.dart';
 
 class LocalRepositoryController extends MainController {

@@ -1,16 +1,56 @@
 # flutter_github_view
 
-A new Flutter project.
+A new Flutter project for search git hub public repository.
+
+Pages: Home Page (Online Tab, Saved Tab), Repository details page.,
+# Features: 
+1. Search GitHub repositories.
+2. Saved GitHub repositories if open.
+3. See saved repositories.
+4. Show last update date accordingly.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+**Task 2**
 
-A few resources to get you started if this is your first Flutter project:
+    Flutter application that uses the "Flutter" keyword to search GitHub and displays the top 50 most popular repositories.
+    **Recruitments**
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+    1. Use "Flutter" as the query phrase to retrieve the list of repositories from the https://api.github.com/ API.
+    2. The fetched data must be saved locally to permit the app to be used offline after data has been fetched.
+    3. Show the list of repositories on the home page.
+    4. The list can be sorted by either the last updated date-time or star count (add a sorting button/icon)
+    5. The selected sorting option persists in further app sessions.
+    6. A repo details page, to which navigated by clicking on an item from the list.
+    7. Details page shows repo owner's name, photo, repository's description, last update date time in the month-
+    day-year hours: seconds format, each field in 2 digit numbers and any other fields you want
+    8. The repository list and repository details data which loaded once should be saved for offline browsing.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    **UI**
+    There is no defined UI design for the assignment. You are free to design anything good. You can reflect your UI/UX concept here.
+
+    Our basic requirement is
+
+    (1) A list of repositories,
+
+    (2) Sorting icon,
+
+    (3) Repository details page. Now based on it, you can design any suitable UI. Also if you want, you can implement more features.
+    **What we’re seeking**
+
+    1. An app that meets all of the functional requirements above.
+    2. Your coding style - show us how you like to write your code
+    3. Any State management
+    4. Principles - how you believe code should be written (OOP, SOLID, DI etc).
+    5. Quality - how you guarantee your code is functioning correctly.
+
+    **Extra Credits**
+    App’s flavor/scheme can be changed easily so that changing from the development API to the production API
+    becomes trivial.
+
+    Special Instructions
+
+    1. Commit your project to the GitHub repository from the initial setup.
+    2. Make your repository public and share the URL with us so that we can check.
+    3. Provide a README file that will contain the overview of the project
+    4. Commit early and often. Don’t commit to everything after finishing the assignment.
