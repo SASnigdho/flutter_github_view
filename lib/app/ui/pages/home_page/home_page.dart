@@ -17,10 +17,13 @@ class HomePage extends GetView<HomeController> {
     return Scaffold(
       appBar: AppBar(title: Obx(() => Text(controller.title.value))),
 
-      //
-      body: Obx(() => widgetOptions[controller.index.value]),
+      // Page Body
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Obx(() => widgetOptions[controller.index.value]),
+      ),
 
-      //
+      // BottomNavigationBar
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
           items: const <BottomNavigationBarItem>[

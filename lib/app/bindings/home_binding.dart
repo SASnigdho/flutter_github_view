@@ -7,7 +7,7 @@ import '../data/provider/search_repository.dart';
 class HomeBinding implements Bindings {
   @override
   void dependencies() {
-    Get.put(() => ApiClient(), permanent: true);
+    Get.put(ApiClient(), permanent: true);
 
     Get.lazyPut<HomeController>(() => HomeController());
 
