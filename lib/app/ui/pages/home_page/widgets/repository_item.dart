@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '../../../utils/date_time_helper.dart';
 
 class RepositoryItem extends StatelessWidget {
-  const RepositoryItem(this.repository, {super.key, required this.onTap});
+  const RepositoryItem(this.repository, {super.key, this.onTap});
 
   final GithubRepository repository;
   final VoidCallback? onTap;

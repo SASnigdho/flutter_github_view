@@ -16,10 +16,7 @@ class SavedRepositoryTab extends GetView<RepositoryController> {
               itemBuilder: (context, index) {
                 final repository = controller.repositories[index];
 
-                return RepositoryItem(
-                  repository,
-                  onTap: () {},
-                );
+                return RepositoryItem(repository);
               },
               separatorBuilder: (context, index) => const SizedBox(),
               itemCount: controller.repositories.length,
