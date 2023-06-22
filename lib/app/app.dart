@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'const/app_colors.dart';
+import 'ui/theme/app_theme.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -9,10 +9,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
-        useMaterial3: true,
-      ),
+      theme: AppTheme.light,
     );
   }
 }
