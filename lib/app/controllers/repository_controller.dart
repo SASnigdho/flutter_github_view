@@ -11,6 +11,7 @@ class RepositoryController extends MainController {
 
   final ISearchRepository repository;
 
+  final isValidate = false.obs;
   final isSearching = false.obs;
   final repositories = <GithubRepository>[].obs;
 
