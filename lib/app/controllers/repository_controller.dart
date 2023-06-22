@@ -14,12 +14,6 @@ class RepositoryController extends MainController {
   final isSearching = false.obs;
   final repositories = <GithubRepository>[].obs;
 
-  @override
-  Future<void> onReady() async {
-    await search('flutter');
-    super.onReady();
-  }
-
   Future<void> search(String keyword) async {
     repositories.clear();
     isSearching.value = true;
@@ -28,12 +22,11 @@ class RepositoryController extends MainController {
       final res = await repository.search(keyword);
 
       if (res.isNotEmpty) repositories.addAll(res);
-      isSearching.value = false;
 
-      log('Error => ${res.length.toString()}');
+      isSearching.value = false;
     } catch (e) {
       isSearching.value = false;
-      log('Error => HomeController:: fetchApi@ $e');
+      log('Error => RepositoryController:: search@ $e');
     }
   }
 }
