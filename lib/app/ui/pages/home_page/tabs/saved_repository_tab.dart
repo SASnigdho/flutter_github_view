@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import '../../../../controllers/local_repository_controller.dart';
 import '../widgets/repository_item.dart';
+import '../widgets/repository_show.dart';
 
 class SavedRepositoryTab extends GetView<LocalRepositoryController> {
   const SavedRepositoryTab({super.key});
@@ -16,7 +17,12 @@ class SavedRepositoryTab extends GetView<LocalRepositoryController> {
               itemBuilder: (context, index) {
                 final repository = controller.repositories[index];
 
-                return RepositoryItem(repository);
+                return RepositoryItem(
+                  repository,
+                  onTap: () async {
+                    await Get.to(() => RepositoryShow(repository));
+                  },
+                );
               },
               separatorBuilder: (context, index) => const SizedBox(),
               itemCount: controller.repositories.length,
