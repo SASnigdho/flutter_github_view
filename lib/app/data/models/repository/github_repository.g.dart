@@ -92,7 +92,7 @@ GithubRepository _$GithubRepositoryFromJson(Map<String, dynamic> json) =>
       openIssues: json['open_issues'] as int?,
       watchers: json['watchers'] as int?,
       defaultBranch: json['default_branch'] as String?,
-      score: json['score'] as int?,
+      score: (json['score'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$GithubRepositoryToJson(GithubRepository instance) =>

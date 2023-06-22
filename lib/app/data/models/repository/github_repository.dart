@@ -148,7 +148,7 @@ class GithubRepository {
   int? watchers;
   @JsonKey(name: 'default_branch')
   String? defaultBranch;
-  int? score;
+  double? score;
 
   GithubRepository({
     this.id,
