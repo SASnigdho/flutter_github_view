@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'license.dart';
 import 'owner.dart';
 
 part 'github_repository.g.dart';
@@ -133,7 +132,6 @@ class GithubRepository {
   bool? disabled;
   @JsonKey(name: 'open_issues_count')
   int? openIssuesCount;
-  License? license;
   @JsonKey(name: 'allow_forking')
   bool? allowForking;
   @JsonKey(name: 'is_template')
@@ -220,7 +218,6 @@ class GithubRepository {
     this.archived,
     this.disabled,
     this.openIssuesCount,
-    this.license,
     this.allowForking,
     this.isTemplate,
     this.webCommitSignoffRequired,

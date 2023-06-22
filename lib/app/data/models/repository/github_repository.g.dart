@@ -79,9 +79,6 @@ GithubRepository _$GithubRepositoryFromJson(Map<String, dynamic> json) =>
       archived: json['archived'] as bool?,
       disabled: json['disabled'] as bool?,
       openIssuesCount: json['open_issues_count'] as int?,
-      license: json['license'] == null
-          ? null
-          : License.fromJson(json['license'] as Map<String, dynamic>),
       allowForking: json['allow_forking'] as bool?,
       isTemplate: json['is_template'] as bool?,
       webCommitSignoffRequired: json['web_commit_signoff_required'] as bool?,
@@ -166,7 +163,6 @@ Map<String, dynamic> _$GithubRepositoryToJson(GithubRepository instance) =>
       'archived': instance.archived,
       'disabled': instance.disabled,
       'open_issues_count': instance.openIssuesCount,
-      'license': instance.license,
       'allow_forking': instance.allowForking,
       'is_template': instance.isTemplate,
       'web_commit_signoff_required': instance.webCommitSignoffRequired,

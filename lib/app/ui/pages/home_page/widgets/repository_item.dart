@@ -8,7 +8,7 @@ class RepositoryItem extends StatelessWidget {
   const RepositoryItem(this.repository, {super.key, required this.onTap});
 
   final GithubRepository repository;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
