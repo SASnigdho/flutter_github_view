@@ -1,12 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'repository.dart';
+part of 'github_repository.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Repository _$RepositoryFromJson(Map<String, dynamic> json) => Repository(
+GithubRepository _$GithubRepositoryFromJson(Map<String, dynamic> json) =>
+    GithubRepository(
       id: json['id'] as int?,
       nodeId: json['node_id'] as String?,
       name: json['name'] as String?,
@@ -94,7 +95,7 @@ Repository _$RepositoryFromJson(Map<String, dynamic> json) => Repository(
       score: json['score'] as int?,
     );
 
-Map<String, dynamic> _$RepositoryToJson(Repository instance) =>
+Map<String, dynamic> _$GithubRepositoryToJson(GithubRepository instance) =>
     <String, dynamic>{
       'id': instance.id,
       'node_id': instance.nodeId,

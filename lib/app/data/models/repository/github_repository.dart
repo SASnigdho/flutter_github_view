@@ -3,10 +3,10 @@ import 'package:json_annotation/json_annotation.dart';
 import 'license.dart';
 import 'owner.dart';
 
-part 'repository.g.dart';
+part 'github_repository.g.dart';
 
 @JsonSerializable()
-class Repository {
+class GithubRepository {
   int? id;
   @JsonKey(name: 'node_id')
   String? nodeId;
@@ -150,7 +150,7 @@ class Repository {
   String? defaultBranch;
   int? score;
 
-  Repository({
+  GithubRepository({
     this.id,
     this.nodeId,
     this.name,
@@ -233,8 +233,8 @@ class Repository {
     this.score,
   });
 
-  factory Repository.fromJson(Map<String, dynamic> json) =>
-      _$RepositoryFromJson(json);
+  factory GithubRepository.fromJson(Map<String, dynamic> json) =>
+      _$GithubRepositoryFromJson(json);
 
-  Map<String, dynamic> toJson() => _$RepositoryToJson(this);
+  Map<String, dynamic> toJson() => _$GithubRepositoryToJson(this);
 }
