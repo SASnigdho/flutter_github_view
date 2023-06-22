@@ -1,3 +1,3 @@
 class Endpoints {
-  static const String baseUrl = 'https://github.com/';
+  static const String baseUrl = 'https://api.github.com/';
 }
