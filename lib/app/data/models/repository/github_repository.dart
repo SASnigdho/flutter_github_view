@@ -152,6 +152,9 @@ class GithubRepository {
   String? defaultBranch;
   double? score;
 
+
+  final ownerLink = IsarLink<Owner>();
+
   GithubRepository({
     this.id,
     this.nodeId,

@@ -404,7 +404,14 @@ const GithubRepositorySchema = CollectionSchema(
   deserializeProp: _githubRepositoryDeserializeProp,
   idName: r'id',
   indexes: {},
-  links: {},
+  links: {
+    r'ownerLink': LinkSchema(
+      id: -7144237400077739511,
+      name: r'ownerLink',
+      target: r'Owner',
+      single: true,
+    )
+  },
   embeddedSchemas: {},
   getId: _githubRepositoryGetId,
   getLinks: _githubRepositoryGetLinks,
@@ -1092,12 +1099,13 @@ Id _githubRepositoryGetId(GithubRepository object) {
 }
 
 List<IsarLinkBase<dynamic>> _githubRepositoryGetLinks(GithubRepository object) {
-  return [];
+  return [object.ownerLink];
 }
 
 void _githubRepositoryAttach(
     IsarCollection<dynamic> col, Id id, GithubRepository object) {
   object.id = id;
+  object.ownerLink.attach(col, col.isar.collection<Owner>(), r'ownerLink', id);
 }
 
 extension GithubRepositoryQueryWhereSort
@@ -10705,7 +10713,21 @@ extension GithubRepositoryQueryObject
     on QueryBuilder<GithubRepository, GithubRepository, QFilterCondition> {}
 
 extension GithubRepositoryQueryLinks
-    on QueryBuilder<GithubRepository, GithubRepository, QFilterCondition> {}
+    on QueryBuilder<GithubRepository, GithubRepository, QFilterCondition> {
+  QueryBuilder<GithubRepository, GithubRepository, QAfterFilterCondition>
+      ownerLink(FilterQuery<Owner> q) {
+    return QueryBuilder.apply(this, (query) {
+      return query.link(q, r'ownerLink');
+    });
+  }
+
+  QueryBuilder<GithubRepository, GithubRepository, QAfterFilterCondition>
+      ownerLinkIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.linkLength(r'ownerLink', 0, true, 0, true);
+    });
+  }
+}
 
 extension GithubRepositoryQuerySortBy
     on QueryBuilder<GithubRepository, GithubRepository, QSortBy> {
