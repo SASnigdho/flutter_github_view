@@ -1,3 +1,4 @@
+import 'package:isar/isar.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'owner.dart';
@@ -5,14 +6,16 @@ import 'owner.dart';
 part 'github_repository.g.dart';
 
 @JsonSerializable()
+@collection
 class GithubRepository {
-  int? id;
+  Id? id;
   @JsonKey(name: 'node_id')
   String? nodeId;
   String? name;
   @JsonKey(name: 'full_name')
   String? fullName;
   bool? private;
+  @ignore
   Owner? owner;
   @JsonKey(name: 'html_url')
   String? htmlUrl;
@@ -127,6 +130,7 @@ class GithubRepository {
   @JsonKey(name: 'forks_count')
   int? forksCount;
   @JsonKey(name: 'mirror_url')
+  @ignore
   dynamic mirrorUrl;
   bool? archived;
   bool? disabled;

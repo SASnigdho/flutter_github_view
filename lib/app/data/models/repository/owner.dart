@@ -1,11 +1,13 @@
+import 'package:isar/isar.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'owner.g.dart';
 
 @JsonSerializable()
+@collection
 class Owner {
   String? login;
-  int? id;
+  Id? id;
   @JsonKey(name: 'node_id')
   String? nodeId;
   @JsonKey(name: 'avatar_url')
