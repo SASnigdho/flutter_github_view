@@ -37,6 +37,7 @@ class DbService implements IDbService {
 
       await isar.writeTxn(() async {
         await isar.owners.delete(repository.owner!.id!);
+
         await isar.githubRepositorys.delete(repository.id!);
       });
     } catch (e) {
@@ -55,7 +56,7 @@ class DbService implements IDbService {
 
       return repository;
     } catch (e) {
-      log('Error => DbService:: getRepositories@ $e');
+      log('Error => DbService:: getRepository@ $e');
       return null;
     }
   }
@@ -94,7 +95,7 @@ class DbService implements IDbService {
         await repository.ownerLink.save();
       });
     } catch (e) {
-      log('Error => DbService:: getRepositories@ $e');
+      log('Error => DbService:: save@ $e');
     }
   }
 }
